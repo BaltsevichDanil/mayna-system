@@ -7,10 +7,10 @@ jobs:
     deploy:
         runs-on: self-hosted
         steps:
-            - name: 'checkout repo'
+            - name: checkout repo
               uses: actions/checkout@v4
 
-            - name: 'create env file'
+            - name: create env file
               run: |
                 touch .env
                 echo DOMAIN=${{ secrets.DOMAIN }} >> .env
@@ -18,11 +18,11 @@ jobs:
                 echo CERT_RESOLVER=${{ secrets.CERT_RESOLVER }} >> .env
                 echo TRAEFIK_USER=${{ secrets.TRAEFIK_USER }} >> .env
                 echo TRAEFIK_PASSWORD_HASH=${{ secrets.TRAEFIK_PASSWORD_HASH }} >> .env
-                echo COMPOSE_FILE="docker-compose.yml:services/traefik/docker-compose.yml:server/account/docker-compose.yml' >> .env
+                echo COMPOSE_FILE="docker-compose.yml:services/traefik/docker-compose.yml:server/account/docker-compose.yml" >> .env
                 cat .env
-                
-            - name: 'docker compose build'
+
+            - name: docker compose build
               run: docker compose build
 
-            - name: 'deploy app'
+            - name: deploy app
               run: docker compose up
