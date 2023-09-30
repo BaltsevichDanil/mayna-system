@@ -1,6 +1,10 @@
-name: Deploy on an new tag
-run-name: Deploy to ${{ inputs.deploy_target }} by @${{ github.actor }}
-on: workflow_dispatch
+name: Deploy to dev
+run-name: Deploy by @${{ github.actor }}
+on: 
+  workflow_dispatch:
+  push:
+      tags:  
+        - 'v[0-9]+.[0-9]+.[0-9]+.beta-[0-9]+'
 
 
 jobs:
