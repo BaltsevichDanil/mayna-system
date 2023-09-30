@@ -1,0 +1,11 @@
+services:
+  account:
+    build:
+        context: server/account
+        dockerfile: Dockerfile
+    restart: unless-stopped
+    labels:
+      - traefik.http.routers.https.rule=Host(`${DOMAIN}`)
+      - traefik.http.routers.https.entrypoints=https
+      - traefik.http.routers.https.tls=true
+      - traefik.http.routers.https.tls.certresolver=${CERT_RESOLVER}
