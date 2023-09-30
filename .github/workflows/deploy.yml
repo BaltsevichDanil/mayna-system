@@ -20,9 +20,12 @@ jobs:
                 echo TRAEFIK_PASSWORD_HASH=${{ secrets.TRAEFIK_PASSWORD_HASH }} >> .env
                 echo COMPOSE_FILE="docker-compose.yml:services/traefik/docker-compose.yml:server/account/docker-compose.yml" >> .env
                 cat .env
+                
+            - name: docker compose down
+              run: docker compose down
 
             - name: docker compose build
               run: docker compose build
 
             - name: deploy app
-              run: docker compose up
+              run: docker compose up -d
