@@ -31,6 +31,7 @@ WORKDIR $APP
 # Run build: 1 - clean, 2 - pub get, 3 - build web
 RUN flutter clean
 RUN flutter pub get
+RUN flutter packages pub run build_runner build --delete-conflicting-outputs
 RUN flutter build web
 
 # once heare the app will be compiled and ready to deploy
