@@ -1,6 +1,6 @@
 name: Build on pull request
 run-name: Create pull request by @${{ github.actor }}
-on: pull_request
+on: workflow_dispatch
 
 jobs:
     build:
