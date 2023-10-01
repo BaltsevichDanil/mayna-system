@@ -23,7 +23,7 @@ jobs:
                 echo LOG_ENCODING=${{ secrets.LOG_ENCODING }} >> .env
                 echo LOG_DISABLE_STACKTRACE=${{ secrets.LOG_DISABLE_STACKTRACE }} >> .env
                 echo LOG_DISABLE_CALLER=${{ secrets.LOG_DISABLE_CALLER }} >> .env
-                echo COMPOSE_FILE="docker-compose.yml:services/traefik/docker-compose.yml:server/account/docker-compose.yml:server/telegram-bot/docker-compose.yml:client/web/docker-compose.yml" >> .env
+                echo COMPOSE_FILE="docker-compose.yml:services/traefik/docker-compose.yml:server/account/docker-compose.yml:server/telegram-bot/docker-compose.yml:client/flutter_web/docker-compose.yml" >> .env
                 cat .env
 
             - name: docker compose build
