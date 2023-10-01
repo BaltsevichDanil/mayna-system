@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:mayna_system/core/services/tele_web_app.dart';
+import 'package:flutter_telegram_web_app/flutter_telegram_web_app.dart' as tg;
 
 class TempMainPage extends StatelessWidget {
-  TempMainPage({Key? key}) : super(key: key);
+  const TempMainPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final TeleWebApp twa = TeleWebApp();
-    final String username = twa.initDataUnsafe.user!.username ?? 'hui';
+    String username = '';
+    if (tg.initDataUnsafe.user != null) {
+      username = tg.initDataUnsafe.user!.username;
+    }
 
     return Scaffold(
       body: SafeArea(

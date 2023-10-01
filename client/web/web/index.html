@@ -38,7 +38,7 @@
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="https://telegram.org/js/telegram-web-app.js" defer></script>
 </head>
 <body>
   <script>
@@ -56,14 +56,5 @@
       });
     });
   </script>
-  <script>
-    window.addEventListener("flutter-first-frame", function () {
-        var loadingIndicator = document.getElementById("loading_indicator");
-        if (loadingIndicator) {
-        loadingIndicator.remove();
-        window.Telegram.WebApp.ready();
-        }
-    });
- </script>
 </body>
 </html>

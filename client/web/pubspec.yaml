@@ -13,7 +13,7 @@ dependencies:
   flutter_keyboard_visibility: ^5.4.1
   dio: ^5.3.3
   flutter_dotenv: ^5.1.0
-  js: ^0.6.4
+  flutter_telegram_web_app: ^0.0.1
 
 dev_dependencies:
   flutter_test:
