@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_web/navigation/custom_router.dart';
+import 'package:flutter_web/features/temp/presentation/pages/temp_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -21,7 +21,10 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(
       const Duration(seconds: 2),
       () async {
-        CustomRouter(context).goToMainPage();
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const TempMainPage()),
+        );
       },
     );
   }
